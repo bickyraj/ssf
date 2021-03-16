@@ -1,0 +1,25 @@
+{
+    "name": "bickyraj/ssf",
+    "description": "about social security fund SSF",
+    "authors": [
+        {
+            "name": "Bicky Raj Kayastha",
+            "email": "bickyrajkayastha@gmail.com"
+        }
+    ],
+    "type": "library",
+    "license": "MIT",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "bickyraj\\ssf\\SsfServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Bickyraj\\Ssf\\": "src/"
+        }
+    },
+    "require": {}
+}
