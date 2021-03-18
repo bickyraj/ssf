@@ -9,6 +9,9 @@
     ],
     "type": "library",
     "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    },
     "extra": {
         "laravel": {
             "providers": [
@@ -20,8 +23,5 @@
         "psr-4": {
             "BickyRaj\\Ssf\\": "src/"
         }
-    },
-    "require": {
-        "guzzlehttp/guzzle": "^7.0"
     }
 }
