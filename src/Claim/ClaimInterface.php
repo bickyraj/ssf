@@ -1,6 +1,6 @@
 <?php
 
-namespace Bickyraj\Ssf\Claim;
+namespace BickyRaj\Ssf\Claim;
 
 interface ClaimInterface
 {

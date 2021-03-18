@@ -1,8 +1,8 @@
 <?php
 
-namespace Bickyraj\Ssf;
+namespace BickyRaj\Ssf;
 
-use Bickyraj\Ssf\Services\SsfApi\SsfApiService;
+use BickyRaj\Ssf\Services\SsfApi\SsfApiService;
 use Illuminate\Support\ServiceProvider;
 
 class SsfServiceProvider extends ServiceProvider

@@ -12,13 +12,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Bickyraj\\Ssf\\SsfServiceProvider"
+                "BickyRaj\\Ssf\\SsfServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Bickyraj\\Ssf\\": "src/"
+            "BickyRaj\\Ssf\\": "src/"
         }
     },
     "require": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bickyraj\Ssf\Services\SsfApi;
+namespace BickyRaj\Ssf\Services\SsfApi;
 
 class SsfApiService
 {

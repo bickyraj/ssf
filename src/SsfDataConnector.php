@@ -1,6 +1,6 @@
 <?php
 
-namespace Bickyraj\Ssf;
+namespace BickyRaj\Ssf;
 
 class SsfDataConnector
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Bickyraj\Ssf;
+namespace BickyRaj\Ssf;
 
-use Bickyraj\Ssf\Claim\Claim;
+use BickyRaj\Ssf\Claim\Claim;
 
 interface SsfInterface
 {
