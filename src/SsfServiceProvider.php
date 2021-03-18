@@ -2,7 +2,6 @@
 
 namespace BickyRaj\Ssf;
 
-use BickyRaj\Ssf\Services\SsfApi\SsfApiService;
 use Illuminate\Support\ServiceProvider;
 
 class SsfServiceProvider extends ServiceProvider
