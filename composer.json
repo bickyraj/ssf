@@ -12,7 +12,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "bickyraj\\ssf\\SsfServiceProvider"
+                "Bickyraj\\Ssf\\SsfServiceProvider"
             ]
         }
     },
