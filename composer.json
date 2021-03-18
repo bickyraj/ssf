@@ -9,9 +9,6 @@
     ],
     "type": "library",
     "license": "MIT",
-    "require": {
-        "guzzlehttp/guzzle": "^7.0"
-    },
     "extra": {
         "laravel": {
             "providers": [
