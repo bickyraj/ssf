@@ -2,6 +2,7 @@
 
 namespace Bickyraj\Ssf;
 
+use Bickyraj\Ssf\Services\SsfApi\SsfApiService;
 use Illuminate\Support\ServiceProvider;
 
 class SsfServiceProvider extends ServiceProvider
@@ -13,7 +14,11 @@ class SsfServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->mergeConfigFrom(__DIR__ . '/config/api.php', 'ssf_api_url');
+        $this->mergeConfigFrom(__DIR__ . '/config/auth.php', 'ssf_auth');
+        $this->app->singleton(Ssf::class, function ($app) {
+            return new Ssf($app->make(Ssf::class));
+        });
     }
 
     /**
@@ -27,7 +32,7 @@ class SsfServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/migrations');
         $this->loadViewsFrom(__DIR__ . '/views', 'bickyraj');
         $this->publishes([
-            __DIR__ . '/migrations' => base_path('database/migrations/'),
-        ]);
+            __DIR__ . '/database/migrations' => base_path('database/migrations/'),
+        ], 'migrations');
     }
 }

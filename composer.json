@@ -21,5 +21,7 @@
             "Bickyraj\\Ssf\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^7.0"
+    }
 }
