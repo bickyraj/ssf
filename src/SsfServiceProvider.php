@@ -15,9 +15,9 @@ class SsfServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/config/api.php', 'ssf_api_url');
         $this->mergeConfigFrom(__DIR__ . '/config/auth.php', 'ssf_auth');
-        // $this->app->singleton(Ssf::class, function ($app) {
-        //     return new Ssf($app->make(Ssf::class));
-        // });
+        $this->app->singleton(Ssf::class, function ($app) {
+            return new Ssf($app->make(Ssf::class));
+        });
     }
 
     /**
