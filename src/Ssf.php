@@ -53,6 +53,7 @@ class Ssf implements SsfInterface
 
     public static function getPatientDetailById(int $patientId)
     {
+        \Log::info(config('ssf_api_url.patient'));
         try {
             self::init();
             $response = self::$ssfClient->get(
@@ -92,6 +93,8 @@ class Ssf implements SsfInterface
                 ]
             );
             $responseBody = json_decode($response->getBody()->getContents());
+            self::$httpStatusCode = 200;
+            self::$message = "Request fetched successfully.";
         } catch (\RequestException $e) {
             if ($e->hasResponse()) {
                 $responseBody = json_decode($e->getResponse()->getBody()->getContents());
