@@ -53,7 +53,6 @@ class Ssf implements SsfInterface
 
     public static function getPatientDetailById(int $patientId)
     {
-        \Log::info(config('ssf_api_url.patient'));
         try {
             self::init();
             $response = self::$ssfClient->get(
