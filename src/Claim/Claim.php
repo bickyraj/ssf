@@ -7,11 +7,6 @@ class Claim
     /**
      * @var int
      */
-    public $claim_id;
-
-    /**
-     * @var int
-     */
     public $patient_id;
 
     /**
@@ -31,7 +26,6 @@ class Claim
 
     public function __construct(array $data = null)
     {
-        $this->claim_id = $data['claim_id'];
         $this->patient_id = $data['patient_id'];
         $this->billable_period_start = $data['billable_period_start'];
         $this->billable_period_end = $data['billable_period_end'];

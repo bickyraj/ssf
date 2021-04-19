@@ -111,21 +111,27 @@ class Ssf implements SsfInterface
     {
         try {
             self::init();
+
             $request_body = [
                 "resourceType" => "Claim",
-                "id" => $claim->claim_id,
                 "identifier" => [
                     [
-                        "use" => "usual",
                         "type" => [
                             "coding" => [
                                 [
-                                    "system" => "https://hl7.org/fhir/valueset-identifier-type.html",
-                                    "code" => "MR"
+                                    "code" => "ACSN",
+                                    "system" => "https://hl7.org/fhir/valueset-identifier-type.html"
                                 ]
                             ]
                         ],
-                        "value" => $claim->claim_id
+                        "use" => "usual",
+                        "value" => "FD3BCF6F-8D16-4425-8628-5A7B79E50180"
+                    ]
+                ],
+                "extension" => [
+                    [
+                        "url" => "schemeType",
+                        "valueString" => "2"
                     ]
                 ],
                 "type" => [
@@ -140,21 +146,21 @@ class Ssf implements SsfInterface
                 ],
                 "created" => $claim->created_at,
                 "enterer" => [
-                    "reference" => "Practitioner/4a3f1a0a-e13c-451a-9511-a4d0fe35d20b"
+                    "reference" => "Practitioner/CE82B1BD-495F-42D2-B2D6-CA44F5D2B029"
                 ],
                 "facility" => [
-                    "reference" => "Location/026E088A-FBD5-474E-8D42-069958A34127"
+                    "reference" => "Location/954EC1AC-7620-4824-9663-14189F8B9563"
                 ],
                 "diagnosis" => [
                     [
-                        "sequence" => 1,
                         "diagnosisCodeableConcept" => [
                             "coding" => [
                                 [
-                                    "code" => "A09"
+                                    "code" => "A01"
                                 ]
                             ]
                         ],
+                        "sequence" => 1,
                         "type" => [
                             [
                                 "text" => "icd_0"
@@ -164,20 +170,19 @@ class Ssf implements SsfInterface
                 ],
                 "item" => [
                     [
-                        "sequence" => 1,
                         "category" => [
                             "text" => "item"
-                        ],
-                        "service" => [
-                            "text" => "0121"
                         ],
                         "quantity" => [
                             "value" => 1.0
                         ],
+                        "sequence" => 1,
+                        "service" => [
+                            "text" => "MED01"
+                        ],
                         "unitPrice" => [
                             "value" => 200.0
                         ]
-
                     ]
                 ],
                 "total" => [
@@ -192,7 +197,7 @@ class Ssf implements SsfInterface
                 ]
             );
             $responseBody = json_decode($response->getBody()->getContents());
-            self::$httpStatusCode = $responseBody->getStatusCode();
+            self::$httpStatusCode = 200;
         } catch (RequestException $e) {
             // $responseBody = Psr7\Message::toString($e->getRequest());
             if ($e->hasResponse()) {
