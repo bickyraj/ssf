@@ -60,7 +60,7 @@ class Ssf implements SsfInterface
             );
 
             self::$httpStatusCode = $response->getStatusCode();
-            $responseBody = json_decode($response->getBody()->getContents());
+            $responseBody = json_decode($response->getBody()->getContents(), true);
         } catch (\RequestException $e) {
             if ($e->hasResponse()) {
                 $responseBody = json_decode($e->getResponse()->getBody()->getContents());
@@ -68,6 +68,11 @@ class Ssf implements SsfInterface
 
             self::$httpStatusCode = 500;
             self::$success = false;
+        } catch (\Exception $e) {
+            $responseBody = '';
+            self::$success = false;
+            self::$message = $e->getMessage();
+            self::$httpStatusCode = 500;
         }
 
         self::$responseBody = $responseBody;
@@ -168,25 +173,9 @@ class Ssf implements SsfInterface
                         ]
                     ]
                 ],
-                "item" => [
-                    [
-                        "category" => [
-                            "text" => "item"
-                        ],
-                        "quantity" => [
-                            "value" => 1.0
-                        ],
-                        "sequence" => 1,
-                        "service" => [
-                            "text" => "MED01"
-                        ],
-                        "unitPrice" => [
-                            "value" => 200.0
-                        ]
-                    ]
-                ],
+                "item" => $claim->items,
                 "total" => [
-                    "value" => 200.0
+                    "value" => number_format($claim->total_amount, 2, '.', '')
                 ]
             ];
 
