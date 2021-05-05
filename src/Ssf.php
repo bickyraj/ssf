@@ -3,6 +3,7 @@
 namespace BickyRaj\Ssf;
 
 use BickyRaj\Ssf\Claim\Claim;
+use BickyRaj\Ssf\Services\AuthService;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Exception\RequestException;
@@ -27,8 +28,8 @@ class Ssf implements SsfInterface
 
     private function __construct()
     {
-        self::$username = config('ssf_auth.username');
-        self::$password = config('ssf_auth.password');
+        self::$username = AuthService::getUsername();
+        self::$password = AuthService::getPassword();
         self::$clientOptions = [
             'verify' => false,
             'auth' => [
