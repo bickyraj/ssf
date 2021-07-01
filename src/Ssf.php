@@ -85,7 +85,7 @@ class Ssf implements SsfInterface
         try {
             self::init();
             $request_body = [
-                "resourceType" =>  "EligibilityRequest",
+                "resourceType" =>  "CoverageEligibilityRequest",
                 "patient" =>  [
                     "reference" =>  "Patient/" . $patientId
                 ]
