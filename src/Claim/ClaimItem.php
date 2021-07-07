@@ -32,7 +32,7 @@ class ClaimItem
                 "value" => number_format($this->quantity, 2, '.', '')
             ],
             "sequence" => 1,
-            "service" => [
+            "productOrService" => [
                 "text" => $this->item_code
             ],
             "unitPrice" => [
