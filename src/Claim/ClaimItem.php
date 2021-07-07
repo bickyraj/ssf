@@ -36,6 +36,7 @@ class ClaimItem
                 "text" => $this->item_code
             ],
             "unitPrice" => [
+                "currency" => "NRS",
                 "value" => number_format($this->unit_price, 2, '.', '')
             ]
         ];
