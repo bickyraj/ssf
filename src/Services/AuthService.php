@@ -17,8 +17,8 @@ class AuthService
 
     public function __construct()
     {
-        self::$username =  Options::get('ssf_settings')['ssf_username'] ?? 'fhir';
-        self::$password =  Options::get('ssf_settings')['ssf_password'] ?? 'VDd4mRnk9FICpTckF9H2';
+        self::$username =  Options::get('ssf_settings')['ssf_username'] ?? 'ssfdemofhir';
+        self::$password =  Options::get('ssf_settings')['ssf_password'] ?? '5IDRB6Ndr7qGk2Pt84yg';
     }
 
     public static function init()
