@@ -37,7 +37,7 @@ class Ssf implements SsfInterface
                 self::$password
             ],
             'headers' => [
-                'remote-user' => 'ssfdemo'
+                'remote-user' => 'samajik'
             ]
         ];
 
